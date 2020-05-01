@@ -1,5 +1,5 @@
 @login
-  Feature: #type feature
-#    Type Agile story here
+  Feature: Login
+    As a user
 
     Scenario: #type scenario here
