@@ -6,3 +6,5 @@ We use `Cucumber BDD` and `DDT` as framework
 `✔ Parallel running is activated`
 
 `✔ Login function added`
+
+`✔ navigateTo method added`
