@@ -24,6 +24,6 @@ public class LoginStepDefinitions {
 
     @Then("user should see main page")
     public void user_should_see_main_page() {
-        Assert.assertEquals("Odoo", Driver.getDriver().getTitle());
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("Odoo"));
     }
 }

@@ -21,5 +21,39 @@ public abstract class AbstractPageBase {
     protected WebDriverWait wait = new WebDriverWait(driver, 25);
     protected Actions actions = new Actions(driver);
 
+    //username at the top right corner
+    @FindBy(xpath = "//span[@class='oe_topbar_name']")
+    private WebElement username;
+
+    //make a link between WebDriver and Page Class
+    public AbstractPageBase() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
+
+    /**
+     * This method is using to navigate between modules
+     * Automation clicks element by JavaScript
+     * Because according to web browser's window size, some elements hide under "More" tab
+     * And it is dynamic, to avoid that we used clickWithJS() method (It comes from BrowserUtils)
+     * @param module accepts module name to navigate (at the top of main page)
+     */
+    public void navigateTo(String module) {
+        String moduleXpath = "//div[@class='navbar-collapse collapse']//span[@class='oe_menu_text' and contains(text(),'" + module + "')]";
+        WebElement moduleElement = driver.findElement(By.xpath(moduleXpath));
+        //to click all module elements event it is under "More" tab
+        BrowserUtils.clickWithJS(moduleElement);
+    }
+
+
+    /**
+     * This method is using to get the name of account owner from right top corner
+     * @return account owner's full name as a String
+     *
+     */
+
+    public String getUsername() {
+        return username.getText();
+    }
 
 }
