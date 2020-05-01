@@ -1,5 +1,9 @@
-@login
-  Feature: Login
-    As a user
+Feature: Login
+	As a user, I should be able to login application
 
-    Scenario: #type scenario here
+
+	@BO3-157
+	Scenario: Login function
+		Given user is on login page
+		When user enters with valid credentials
+		Then user should see main page
