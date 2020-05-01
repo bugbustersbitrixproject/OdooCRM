@@ -26,4 +26,9 @@ public class LoginPage {
         emailBox.sendKeys(ConfigurationReader.getProperty("sales_manager1"));
         passwordBox.sendKeys(ConfigurationReader.getProperty("salesmanager_password"), Keys.ENTER);
     }
+
+    public void login(String username, String password) {
+        emailBox.sendKeys(username);
+        passwordBox.sendKeys(password, Keys.ENTER);
+    }
 }
