@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "step_definitions",
-        dryRun = true,
-        tags = "",//you can use tags option to run specific test case
+        dryRun = false,
+        tags = "@BO3-157",//you can use tags option to run specific test case
         plugin = {
                 "html:target/default-report",//to create default report from Cucumber
                 "json:target/cucumber1.json",//to create json report
