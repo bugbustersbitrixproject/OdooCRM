@@ -1,7 +1,6 @@
 Project for Odoo CRM
+We use `Cucumber BDD` and `DDT` as framework
 
-`pom.xml is ready to start testing`
-
-`we use Cucumber BDD and DDT as framework`
-
-`Parallel running is activated`
+`✔ pom.xml is ready to start testing`
+`✔ Parallel running is activated`
+`✔ Login function added`
