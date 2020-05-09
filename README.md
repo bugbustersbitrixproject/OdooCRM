@@ -8,3 +8,5 @@ We use `Cucumber BDD` and `DDT` as framework
 `✔ Login function added`
 
 `✔ navigateTo method added`
+
+`✔ sales page actions defined`
