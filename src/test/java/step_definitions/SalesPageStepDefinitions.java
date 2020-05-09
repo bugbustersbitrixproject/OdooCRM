@@ -9,8 +9,9 @@ public class SalesPageStepDefinitions {
     SalesPage salesPage = new SalesPage();
 
     @Then("user should navigates to {string} module")
-    public void user_should_navigates_to_module(String string) {
-        salesPage.navigateTo("Sales");
+    public void user_should_navigates_to_module(String moduleName) {
+
+        salesPage.navigateTo(moduleName);
     }
 
     @Then("user should create quotation")

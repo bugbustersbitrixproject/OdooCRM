@@ -26,4 +26,9 @@ public class LoginStepDefinitions {
     public void user_should_see_main_page() {
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Odoo"));
     }
+
+    @When("user enters as {string}")
+    public void userEntersAs(String role) {
+        loginPage.login(role);
+    }
 }
