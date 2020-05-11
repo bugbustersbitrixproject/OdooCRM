@@ -9,6 +9,6 @@ We use `Cucumber BDD` and `DDT` as framework
 
 `✔ navigateTo method added`
 
-`✔ sales page actions defined`
+`✔ sales module actions defined`
 
 
