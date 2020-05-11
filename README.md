@@ -11,4 +11,4 @@ We use `Cucumber BDD` and `DDT` as framework
 
 `✔ sales page actions defined`
 
-`v``
+v
