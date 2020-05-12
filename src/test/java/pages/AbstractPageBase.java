@@ -47,10 +47,12 @@ public abstract class AbstractPageBase {
      * @param module accepts module name to navigate (at the top of main page)
      */
     public void navigateTo(String module) {
+        BrowserUtils.wait(5);
         String moduleXpath = "//div[@class='navbar-collapse collapse']//span[@class='oe_menu_text' and contains(text(),'" + module + "')]";
         WebElement moduleElement = driver.findElement(By.xpath(moduleXpath));
         //to click all module elements event it is under "More" tab
         BrowserUtils.clickWithJS(moduleElement);
+        BrowserUtils.wait(5);
     }
 
 

@@ -4,6 +4,7 @@ package pages;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.BrowserUtils;
 import utilities.ConfigurationReader;
 
 
@@ -26,6 +27,7 @@ public class LoginPage extends AbstractPageBase{
     public void login() {
         emailBox.sendKeys(ConfigurationReader.getProperty("sales_manager1"));
         passwordBox.sendKeys(ConfigurationReader.getProperty("salesmanager_password"), Keys.ENTER);
+        BrowserUtils.waitForPageToLoad(15);
     }
 
     /**
@@ -38,6 +40,7 @@ public class LoginPage extends AbstractPageBase{
     public void login(String username, String password) {
         emailBox.sendKeys(username);
         passwordBox.sendKeys(password, Keys.ENTER);
+        BrowserUtils.waitForPageToLoad(15);
     }
 
     public void login(String role){
@@ -45,10 +48,12 @@ public class LoginPage extends AbstractPageBase{
          if (role.equals("sales manager")){
              emailBox.sendKeys(ConfigurationReader.getProperty("sales_manager1"));
              passwordBox.sendKeys(ConfigurationReader.getProperty("salesmanager_password"),Keys.ENTER);
+             BrowserUtils.waitForPageToLoad(15);
 
          }else if(role.equals("expenses manager")){
              emailBox.sendKeys(ConfigurationReader.getProperty("expensesmanager1"));
              passwordBox.sendKeys(ConfigurationReader.getProperty("expensesmanager_password"),Keys.ENTER);
+             BrowserUtils.waitForPageToLoad(15);
 
          }else{
              System.out.println("You are entering wrong credentials");

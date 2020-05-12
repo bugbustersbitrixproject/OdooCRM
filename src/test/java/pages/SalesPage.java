@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.BrowserUtils;
 
 public class SalesPage extends AbstractPageBase {
 
@@ -23,7 +24,7 @@ public class SalesPage extends AbstractPageBase {
     @FindBy(xpath = "//li[@class='active']//span[@class='oe_menu_text'][contains(text(),'Orders')]")
     private WebElement orders;
 
-    @FindBy(xpath = "//li[@class='active']//span[@class='oe_menu_text'][contains(text(),'Customers')]")
+    @FindBy(xpath = "(//span[contains(text(),'Customers')])[2]")
     private WebElement customers;
 
     @FindBy(xpath = "//li//span[@class='oe_menu_text'][contains(text(),'Orders to Invoice')]")
@@ -52,10 +53,24 @@ public class SalesPage extends AbstractPageBase {
 
 
 
+
+
     public void clickSales(){
 
         salesModule.click();
+
     }
+
+    public void customerClick(){
+
+        BrowserUtils.wait(5);
+        BrowserUtils.waitForPageToLoad(15);
+        customers.click();
+        BrowserUtils.wait(6);
+
+    }
+
+
 
 
 
