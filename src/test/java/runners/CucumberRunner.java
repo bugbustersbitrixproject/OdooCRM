@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "step_definitions",
         dryRun = false,
-        tags = "@BO3-158",//you can use tags option to run specific test case, we use some Jira ticket numbers as tag name
+        tags = "@quotation",//you can use tags option to run specific test case, we use some Jira ticket numbers as tag name
         plugin = {
                 "html:target/default-report",//to create default report from Cucumber
                 "json:target/cucumber1.json",//to create json report
@@ -21,3 +21,5 @@ import org.junit.runner.RunWith;
 
 public class CucumberRunner {
 }
+// tags = "@quotation",
+// tags ="@BO3-157",
