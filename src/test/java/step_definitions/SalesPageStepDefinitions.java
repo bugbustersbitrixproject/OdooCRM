@@ -13,9 +13,9 @@ public class SalesPageStepDefinitions {
 
         salesPage.navigateTo(moduleName);
     }
-
-    @Then("user should create quotation")
-    public void user_should_create_quotation() {
-
-    }
+//
+//    @Then("user should create quotation")
+//    public void user_should_create_quotation() {
+//
+//    }
 }
