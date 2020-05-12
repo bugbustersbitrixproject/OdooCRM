@@ -1,9 +1,20 @@
 Feature: Create Quotation
+
   As a user, I should be able to create quotations
 
-  @BO3-158 @Odoo
-  Scenario: user should be able to create quotation
+
+  Background: User on login page
     Given user is on login page
-    When user enters with valid credentials
+    When user enters as "sales manager"
+
+  Scenario: User should be able to create quotations
     Then user should navigates to "Sales" module
-    Then user should create quotation
+#    And user should be able to click on "create" button
+#    Then user should enter this following information for creating new quote:
+#      | Customer       | Invoice Address | Delivery Address | Expiration Date | Pricelist | Payment Terms |
+#      | ABC LLC        | ABC LLC         | ABC LLC          | 05/25/2020      | 11000     | 15 DAYS       |
+#      | Ada yesilcabut | 1021 NY         | ADA LLC          | 06/30/2020      | 25000     | 30 DAYS       |
+
+
+
+

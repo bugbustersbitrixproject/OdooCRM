@@ -1,21 +1,17 @@
 package pages;
 
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import utilities.BrowserUtils;
 import utilities.ConfigurationReader;
-import utilities.Driver;
-
-import javax.security.auth.login.Configuration;
-
-public class LoginPage {
 
 
-    public LoginPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+public class LoginPage extends AbstractPageBase{
+
+
+
 
     @FindBy(id = "login")
     private WebElement emailBox;
@@ -31,6 +27,7 @@ public class LoginPage {
     public void login() {
         emailBox.sendKeys(ConfigurationReader.getProperty("sales_manager1"));
         passwordBox.sendKeys(ConfigurationReader.getProperty("salesmanager_password"), Keys.ENTER);
+        BrowserUtils.waitForPageToLoad(15);
     }
 
     /**
@@ -43,5 +40,24 @@ public class LoginPage {
     public void login(String username, String password) {
         emailBox.sendKeys(username);
         passwordBox.sendKeys(password, Keys.ENTER);
+        BrowserUtils.waitForPageToLoad(15);
+    }
+
+    public void login(String role){
+
+         if (role.equals("sales manager")){
+             emailBox.sendKeys(ConfigurationReader.getProperty("sales_manager1"));
+             passwordBox.sendKeys(ConfigurationReader.getProperty("salesmanager_password"),Keys.ENTER);
+             BrowserUtils.waitForPageToLoad(15);
+
+         }else if(role.equals("expenses manager")){
+             emailBox.sendKeys(ConfigurationReader.getProperty("expensesmanager1"));
+             passwordBox.sendKeys(ConfigurationReader.getProperty("expensesmanager_password"),Keys.ENTER);
+             BrowserUtils.waitForPageToLoad(15);
+
+         }else{
+             System.out.println("You are entering wrong credentials");
+         }
+
     }
 }

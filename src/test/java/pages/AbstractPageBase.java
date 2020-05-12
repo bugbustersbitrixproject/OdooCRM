@@ -12,14 +12,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BrowserUtils;
 import utilities.Driver;
 
+import java.util.List;
+
 /**
  * This class will be extended by page classes
  * And common web elements/locators can be stored here
  */
 public abstract class AbstractPageBase {
+
     protected WebDriver driver = Driver.getDriver();
     protected WebDriverWait wait = new WebDriverWait(driver, 25);
     protected Actions actions = new Actions(driver);
+
+    // list of all the module sat the top
+    @FindBy(xpath = "//ul[@class='nav navbar-nav navbar-left oe_application_menu_placeholder']")
+    private List<WebElement> modules;
 
     //username at the top right corner
     @FindBy(xpath = "//span[@class='oe_topbar_name']")
@@ -27,6 +34,7 @@ public abstract class AbstractPageBase {
 
     //make a link between WebDriver and Page Class
     public AbstractPageBase() {
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -39,10 +47,12 @@ public abstract class AbstractPageBase {
      * @param module accepts module name to navigate (at the top of main page)
      */
     public void navigateTo(String module) {
+        BrowserUtils.wait(5);
         String moduleXpath = "//div[@class='navbar-collapse collapse']//span[@class='oe_menu_text' and contains(text(),'" + module + "')]";
         WebElement moduleElement = driver.findElement(By.xpath(moduleXpath));
         //to click all module elements event it is under "More" tab
         BrowserUtils.clickWithJS(moduleElement);
+        BrowserUtils.wait(5);
     }
 
 
@@ -53,6 +63,7 @@ public abstract class AbstractPageBase {
      */
 
     public String getUsername() {
+
         return username.getText();
     }
 
